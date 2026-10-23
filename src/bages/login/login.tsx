@@ -15,17 +15,17 @@ import {
 } from "../../lib/Schemas/Auth.Schemas";
 import { loginUser } from "../../Services/Outhservices";
 import axios from "axios";
-import { useContext, useState } from "react";
+import {  useState } from "react";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router";
-import { Tokencontext } from "../../commponents/context/Tokencontext";
+import { useTokenContext } from "../../commponents/context/Tokencontext";
 
 
 export default function Login() {
   const [sucessMessage, setsucessMessage] = useState("");
   const [errorMessage, seterrorMessage] = useState("");
   const navigate = useNavigate();
-  const {setToken} = useContext(Tokencontext)
+  const { setToken } = useTokenContext();
 
   const {
     register,

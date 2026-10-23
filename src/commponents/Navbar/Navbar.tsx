@@ -4,18 +4,18 @@ import { Button, Dropdown, Label, Tabs } from "@heroui/react";
 
 import { Bell, House,  LogOut,  Menu,  Settings as SettingsIcon, User } from "lucide-react";
 
-import { useContext } from "react";
+
 import { useQuery } from "@tanstack/react-query";
-import { Tokencontext } from "../context/Tokencontext";
+import { useTokenContext } from "../context/Tokencontext";
 import { Link, useLocation, useNavigate } from "react-router";
-import { UserContext, type UserContextType } from "../context/UserContex";
+import { useUserContext } from "../context/UserContex";
 
 import { getUnreadNotificationsCount } from "../../Services/notification.services";
 
 export default function Navbar() {
-  const { setToken } = useContext(Tokencontext);
+  const { setToken } = useTokenContext();
 
-  const { userDetails }: UserContextType = useContext(UserContext);
+  const { userDetails } = useUserContext();
 
   const location = useLocation();
   const navigate = useNavigate();

@@ -34,7 +34,7 @@ export default function Newsfeed() {
     queryKey: ["getFeed"],
 
     queryFn: async (): Promise<FeedResponse> => {
-      const response = await getUserFeed(1);
+      const response = await getUserFeed();
 
       // دعم استجابة Axios الكاملة
       const result: FeedResponse =

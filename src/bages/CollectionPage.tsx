@@ -1,9 +1,9 @@
 
-import { useContext, useEffect, useRef } from "react";
+import {  useEffect, useRef } from "react";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { Link } from "react-router";
 
-import { UserContext } from "../commponents/context/UserContex";
+import { useUserContext } from "../commponents/context/UserContex";
 
 import {
   getCollectionPosts,
@@ -40,7 +40,7 @@ type Props = {
 export default function CollectionPage({ mode }: Props) {
   const loadMoreRef = useRef<HTMLDivElement | null>(null);
 
-  const { userDetails } = useContext(UserContext);
+  const { userDetails } = useUserContext();
 
   const {
     data,

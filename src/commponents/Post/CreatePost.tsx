@@ -9,7 +9,6 @@ import {
 } from "lucide-react";
 
 import {
-  useContext,
   useEffect,
   useRef,
   useState,
@@ -22,12 +21,12 @@ import { createPost } from "../../Services/postservicees";
 import toast from "react-hot-toast";
 import { Spinner } from "@heroui/react";
 
-import { UserContext, type UserContextType } from "../context/UserContex";
+import { useUserContext } from "../context/UserContex";
 
 import EmojiPicker, { EmojiStyle, Theme } from "emoji-picker-react";
 
 export default function CreatePost() {
-  const { userDetails }: UserContextType = useContext(UserContext);
+  const { userDetails } = useUserContext();
 
   const queryClient = useQueryClient();
 

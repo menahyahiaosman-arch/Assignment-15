@@ -10,18 +10,7 @@ const auth = () => ({
   },
 });
 
-type PostsResponse = {
-  data?: {
-    posts?: PostCardI[];
-  };
-  meta?: {
-    pagination?: {
-      currentPage: number;
-      numberOfPages: number;
-      nextPage?: number | null;
-    };
-  };
-};
+
 
 
 export async function getMyPosts(userId: string) {

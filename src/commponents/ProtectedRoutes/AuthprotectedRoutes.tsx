@@ -1,6 +1,6 @@
-import React, { useContext, useEffect, useState, type ReactNode } from "react";
+import { useEffect, type ReactNode } from "react";
 import { useNavigate } from "react-router";
-import { Tokencontext } from "../context/Tokencontext";
+import { useTokenContext } from "../context/Tokencontext";
 
 
 export default function AuthProtectedRoutes({
@@ -9,7 +9,7 @@ export default function AuthProtectedRoutes({
   children: ReactNode;
 }) {
 
-  const {token} = useContext(Tokencontext)
+  const { token } = useTokenContext();
   const navigate = useNavigate();
 
   useEffect(() => {

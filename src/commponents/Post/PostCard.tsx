@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 
 import { Link } from "react-router";
-import { useContext, useEffect, useRef, useState } from "react";
+import {  useEffect, useRef, useState } from "react";
 import type { PostCardI, TopComment } from "../../Types/postCard.types";
 
 import {
@@ -31,7 +31,7 @@ import {
 import PostComment from "./PostComment";
 import EditPost from "./EditPost";
 import { AlertDialog, Button, Dropdown, Label } from "@heroui/react";
-import { UserContext, type UserContextType } from "../context/UserContex";
+import { useUserContext } from "../context/UserContex";
 import { useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import PostLikesModal from "./PostLikesModal";
@@ -81,7 +81,7 @@ type CommentsResponse = {
 };
 
 export default function PostCard({ post, fullWidth = false }: PostCardProps) {
-  const { userDetails }: UserContextType = useContext(UserContext);
+  const { userDetails } = useUserContext();
   const queryClient = useQueryClient();
 
   const commentInputId = `post-comment-${post._id}`;

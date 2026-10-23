@@ -1,12 +1,12 @@
 
 import { ImagePlus, Send, X } from "lucide-react";
-import { useContext, useEffect, useRef, useState } from "react";
+import {  useEffect, useRef, useState } from "react";
 import type { ChangeEvent, FormEvent } from "react";
 import toast from "react-hot-toast";
 import { useQueryClient } from "@tanstack/react-query";
 
 import { createPostComment } from "../../Services/comments.serveces";
-import { UserContext } from "../context/UserContex";
+import { useUserContext } from "../context/UserContex";
 
 type Props = {
   postId: string;
@@ -17,7 +17,7 @@ export default function PostComment({
   postId,
   getComments,
 }: Props) {
-  const { userDetails } = useContext(UserContext);
+ const { userDetails } = useUserContext();
   const queryClient = useQueryClient();
 
   const inputRef = useRef<HTMLInputElement>(null);

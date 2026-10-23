@@ -1,11 +1,8 @@
-import { useContext, useState } from "react";
+import {  useState } from "react";
 import { Bookmark, ImageIcon, Mail, Users } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 
-import {
-  UserContext,
-  type UserContextType,
-} from "../../commponents/context/UserContex";
+import { useUserContext } from "../../commponents/context/UserContex";
 
 import PostCard from "../../commponents/Post/PostCard";
 
@@ -17,7 +14,7 @@ import ProfilePhoto from "../../commponents/ProfilePhoto/ProfilePhoto";
 function Profile() {
   const [activeTab, setActiveTab] = useState<"posts" | "saved">("posts");
 
-  const { userDetails }: UserContextType = useContext(UserContext);
+  const { userDetails } = useUserContext();
 
   const userId = userDetails?._id ?? "";
 

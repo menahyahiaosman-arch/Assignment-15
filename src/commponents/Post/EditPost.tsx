@@ -31,7 +31,7 @@ export default function EditPost({postId ,
     setImagePreview(null);
   }
 
-  async function handleSumbit(e: React.FormEvent<HTMLInputElement>) {
+  async function handleSumbit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setIsloading(true);
 

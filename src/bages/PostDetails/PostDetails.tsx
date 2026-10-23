@@ -6,7 +6,6 @@ import {
   Heart,
   MessageCircle,
   MoreHorizontal,
-  Send,
   Share2,
 } from "lucide-react";
 import { Link, useParams } from "react-router";
